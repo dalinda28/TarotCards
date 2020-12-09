@@ -1,6 +1,9 @@
-Java - TarotCards
-=======
-Architecture
+## Java - TarotCards
+
+ ## Contexte 
+ TarotCards est un projet scolaire Java réalisé en Décembre 2020 .
+
+## Architecture
 -----------
 | **Classes**   | **Variables**         | **Methodes**  |
 | ------------- |:-------------:        | -----:        |
@@ -8,3 +11,7 @@ Architecture
 | Card          | -                     | setDescription, setDescription |
 | Action        | -                     | displayCard, addCard, editCard, removecard, searchCard, save |
 | Menu          | -                     | displayChoices, quickMenu (calls an action), executeAction |
+
+
+## L'interface utilisateur
+## Conclusion
