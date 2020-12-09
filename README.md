@@ -1,4 +1,4 @@
-## Java - TarotCards
+# Java - TarotCards
 
  ## Contexte 
  TarotCards est un projet scolaire Java réalisé en Décembre 2020 .
