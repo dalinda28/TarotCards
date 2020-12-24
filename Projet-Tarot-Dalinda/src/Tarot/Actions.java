@@ -19,7 +19,7 @@ public class Actions {
 	 private Scanner input;
 	 private BufferedImage image; 
 	
-	 public Actions() {
+	 public Actions() throws ClassNotFoundException, IOException {
 	        this.tarot= new Tarot();
 	        input = new Scanner(System.in);
 	 }
@@ -205,9 +205,6 @@ public class Actions {
 	            if (card.getCardType() == "Major" || card.getCardType() == "Minor") {
 	                System.out.println("3 - Type");
 	            }
-	            if (card.getCardType() =="Major") {
-	                System.out.println("4 - HP");
-	            }
 
 	            int choice = promptInt();
 
@@ -240,21 +237,12 @@ public class Actions {
 	                case 3:
 	                    toEdit = "type";
 	                    break;
-	                case 4:
-	                    toEdit = "hp";
-	                    break;
 	            }
 
-	            System.out.println("Type the new value");
-	            if (toEdit == "hp") {
-	                int content = input.nextInt();
-	                input.nextLine();
-	                tarot.editCard((cardNumber-1), toEdit, content);
-	            }
-	            else {
+	             
 	                String content = input.nextLine();
 	                tarot.editCard((cardNumber-1), toEdit, content);
-	            }
+	            
 	        }
 	    }
 

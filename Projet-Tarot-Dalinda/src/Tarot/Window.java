@@ -57,7 +57,7 @@ public class Window extends JFrame{
 
 	public Window() throws IOException{
 
-		this.setSize(aW,aH+30);
+		this.setSize(aW,aH-100);
 		this.setTitle("Tarot");
 	    this.setResizable(false);
 	    this.setLocationRelativeTo(null);  
@@ -78,13 +78,6 @@ public class Window extends JFrame{
 			   	    board.add(cardLabel);
 	    		}
 	    }
-	    
-	    /*
-	    JLabel cardLabel = new JLabel(new ImageIcon(((Tarot) card).getCardImage()));
-	    cardLabel.setBounds(90, 10, 120, 10);
-	    cardLabel.setSize(200,400);
-	    board.add(cardLabel);
-	    */
 	   
 	    	  
 	    ActAdd addButton = new ActAdd();
@@ -132,7 +125,7 @@ public class Window extends JFrame{
 	public class Board extends JPanel{
 		  
 		/**
-		 * This methode contain the paintComponent
+		 * This method contain the paintComponent
 		 */
 		private static final long serialVersionUID = 1L;
 
@@ -145,10 +138,6 @@ public class Window extends JFrame{
 			g.setColor(Color.black);
 			g.drawRect(gridX, gridY, gridW, gridH);
 			g.drawRect(gridX+920, gridY, gridW-670, gridH);
-		
-			/*String s = "./src/Image/" + this.toString() + ".gif";
-	        image = Toolkit.getDefaultToolkit().getImage(s);
-	        g.drawImage(image, 0, 0, this);*/
 		}
 
 	}
@@ -200,7 +189,42 @@ public class Window extends JFrame{
 	public class ActEdit implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("You just clicked the EDIT button ! ");
-		}
+	        String[] options = {"Name", "Description"};
+	        JTextField nameCard = new JTextField();
+	        JTextField descripCard = new JTextField();
+	        JTextField typeCard = new JTextField();
+
+	        
+	        ImageIcon imageIcon = new ImageIcon(new ImageIcon("./src/Image/tarot.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+			String s = (String)JOptionPane.showInputDialog(
+					null,
+				    "What do you want to edit ?",
+				    "Edit a card",
+				    JOptionPane.INFORMATION_MESSAGE,
+				    imageIcon,
+				    options,
+				    options[0]);
+			System.out.println(s);
+			int returnValue = 0;
+			if (s.equals("Name")){
+				
+				returnValue = JOptionPane.showOptionDialog(null, 
+					    new Object[] {"New name of card :", nameCard},
+					      "Connexion",
+					      JOptionPane.OK_CANCEL_OPTION,
+					      JOptionPane.QUESTION_MESSAGE, null, null, null); 
+			}
+			else{
+				returnValue = JOptionPane.showOptionDialog(null, 
+					    new Object[] {"New description of card :", descripCard},
+					      "Connexion",
+					      JOptionPane.OK_CANCEL_OPTION,
+					      JOptionPane.QUESTION_MESSAGE, null, null, null); 
+			}
+			
+			if (returnValue == JOptionPane.YES_OPTION)
+	    		JOptionPane.showMessageDialog(null, "Card edit !");
+		}		
 	}
 	
 	public class ActRemove implements ActionListener{
@@ -218,6 +242,7 @@ public class Window extends JFrame{
 	public class ActSave implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("You just clicked the SAVE button ! ");
+			 JOptionPane.showMessageDialog(null,"Your deck has been saved .");  
 		}
 	}
 	

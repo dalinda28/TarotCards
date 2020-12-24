@@ -36,7 +36,7 @@ public class MinorCard extends Card {
         return text;
     }
 
-	  /**
+	/**
      * Edit card name and description
      * @param cardName Define the name of the Minor Cards
      * @param cardDescription Define the description of the card
