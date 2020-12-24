@@ -1,21 +1,19 @@
 # Java - TarotCards
 
- ## Contexte 
- TarotCards est un projet scolaire Java réalisé en Décembre 2020 .
+ ## Context
+ TarotCards is a Java school project carried out in December 2020.
 
 ## Architecture
 -----------
-| **Classes**   | **Variables**         | **Methodes**  |
-| ------------- |:-------------:        | -----:        |
-| TarotCard     | ArrayList<Card<Card>> | getCars, addCard, removeCard, searchCards, save |
-| Card          | -                     | setDescription, setDescription |
-| Action        |  tarot(Tarot) / input(Scanner) / image(BufferedImage) | displayCard, addCard, editCard, removecard, searchCard, save |
-| Menu          | -                     | displayChoices, quickMenu (calls an action), executeAction |
-| MinorCard     | -                     | toString, editCard, getCardImage |
-| MajorCard     | -                     | toString, editCard, getCardImage |
-| ButtonAction  | -                     | displayChoices, quickMenu (calls an action), executeAction |
-| Window        | -                     | Board |
-
+| **Classes**   | **Methodes**  |
+| ------------- | -----:        |
+| TarotCard     | getCars, addCard, removeCard, searchCards, save |
+| Card          | setDescription, setDescription |
+| Action        | displayCard, addCard, editCard, removecard, searchCard, save |
+| Menu          | displayChoices, quickMenu (calls an action), executeAction |
+| MinorCard     | toString, editCard, getCardImage |
+| MajorCard     | toString, editCard, getCardImage |
+| ButtonAction  | displayChoices, quickMenu (calls an action), executeAction |
 
 **Main :**
 This class initialize and modifies the Main view and define event handlers for the objects.<br/>
@@ -36,14 +34,10 @@ This class is a concrete implementation of the Card class it adds a cardDomain o
 **Window :**	
 This class initialize and modifies the Main view and define event handlers for the objects.<br/>
 
-
-## L'interface utilisateur
-
-## Difficulté et solution
-La plus grande difficulté a été de faire l’interaction entre interfaces et code sous-jacent.
-
-Je passais beaucoup de temps pour arriver un résultat peu convaincant.
-
-La sérialisation en JSON a été abandonnée malgré la facilité d'intégration avec GSON. L'importation de GSON.jar 
+## Difficulty and solution
+The biggest difficulty was making the interaction between interfaces and the underlying code.
+The serialization works well but the deserialization JSON to object has been abandoned. 
+I spent a lot of time to achieve an unconvincing result. The program with the console works very well but the interface is not yet finished due to lack of time.
 
 ## Conclusion
+It's a very interesting project, it allowed me to understand a lot of things like serialization, interfaces and also many other functionalities that Eclipse hides.
